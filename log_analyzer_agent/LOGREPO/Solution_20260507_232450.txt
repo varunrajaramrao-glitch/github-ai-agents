@@ -1,0 +1,38 @@
+**Incident Resolution Guide**
+
+**Issue Description:**
+The GraphQL API has entered degraded mode due to the unavailability of the OrderService and InventoryService, resulting in rejected requests and partial responses. This guide provides step-by-step instructions for immediate, short-term, and long-term fixes to resolve the issue.
+
+### Immediate Fix (What to Do Right Now)
+
+1. **Check Service Status:** Verify the status of the OrderService and InventoryService to determine if they are running and responding to requests.
+2. **Restart Services:** Attempt to restart the OrderService and InventoryService to see if it resolves the issue.
+3. **Check Network Connectivity:** Verify network connectivity between the GraphQL API and the downstream services to ensure there are no issues with communication.
+4. **Disable Circuit Breaker:** Temporarily disable the circuit breaker for the OrderService and InventoryService to allow requests to be processed while investigating the issue.
+5. **Notify Users:** Inform users of the issue and provide an estimated time for resolution.
+
+### Short Term Fix (Next 24 Hours)
+
+1. **Investigate Service Logs:** Analyze the logs of the OrderService and InventoryService to determine the cause of the unavailability.
+2. **Adjust Timeout Values:** Adjust the timeout values for the GraphQL API to ensure they are suitable for the response times of the downstream services.
+3. **Implement Retry Mechanism:** Implement a retry mechanism for the OrderService and InventoryService to handle temporary failures.
+4. **Monitor Services:** Closely monitor the services and the GraphQL API to detect any signs of issues and trigger alerts to prevent prolonged downtime.
+5. **Update Incident Report:** Update the incident report with the findings and actions taken to resolve the issue.
+
+### Long Term Fix (Permanent Solution)
+
+1. **Implement Load Balancing:** Implement load balancing to distribute traffic across multiple instances of the OrderService and InventoryService to prevent overload.
+2. **Implement Service Discovery:** Implement service discovery to ensure the GraphQL API can find available instances of the downstream services.
+3. **Implement Circuit Breaker with Fallback:** Implement a circuit breaker with a fallback mechanism to prevent cascading failures and provide a default response when a service is unavailable.
+4. **Implement Monitoring and Alerting:** Implement monitoring and alerting tools to detect issues with the services and trigger alerts to prevent prolonged downtime.
+5. **Conduct Regular Maintenance:** Conduct regular maintenance and testing to ensure the services and GraphQL API are functioning correctly and to identify potential issues before they occur.
+
+### How to Prevent This in Future
+
+1. **Regularly Review Service Logs:** Regularly review the logs of the OrderService and InventoryService to detect potential issues before they occur.
+2. **Implement Automated Testing:** Implement automated testing to ensure the services and GraphQL API are functioning correctly and to identify potential issues.
+3. **Conduct Load Testing:** Conduct load testing to ensure the services and GraphQL API can handle expected traffic and to identify potential bottlenecks.
+4. **Monitor Service Metrics:** Monitor service metrics, such as response times and error rates, to detect potential issues and trigger alerts.
+5. **Implement Continuous Integration and Delivery:** Implement continuous integration and delivery to ensure changes to the services and GraphQL API are properly tested and validated before deployment.
+
+By following this incident resolution guide, you should be able to resolve the issue with the GraphQL API and prevent similar issues from occurring in the future. Remember to always monitor the services and GraphQL API and conduct regular maintenance to ensure everything is functioning correctly.

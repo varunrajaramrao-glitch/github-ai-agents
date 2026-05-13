@@ -1,0 +1,35 @@
+[2024-03-15 08:23:11] INFO  - GraphQL API server started on port 4000
+[2024-03-15 08:23:12] INFO  - Connected to PostgreSQL database successfully
+[2024-03-15 08:23:12] INFO  - Redis cache initialized
+[2024-03-15 08:23:15] INFO  - Incoming GraphQL query from client 192.168.1.45
+[2024-03-15 08:23:15] INFO  - Resolving query: getUserOrders { userId: 10234 }
+[2024-03-15 08:23:15] DEBUG - Forwarding request to OrderService at http://order-service:8080/api/orders
+[2024-03-15 08:23:25] ERROR - Timeout after 10000ms waiting for response from OrderService (http://order-service:8080/api/orders)
+[2024-03-15 08:23:25] ERROR - GraphQL resolver failed: getUserOrders
+[2024-03-15 08:23:25] WARN  - Returning partial response to client 192.168.1.45
+[2024-03-15 08:23:30] INFO  - Incoming GraphQL query from client 192.168.1.67
+[2024-03-15 08:23:30] INFO  - Resolving query: getInventoryStatus { productId: 5521 }
+[2024-03-15 08:23:30] DEBUG - Forwarding request to InventoryService at http://inventory-service:8081/api/inventory
+[2024-03-15 08:23:40] ERROR - Timeout after 10000ms waiting for response from InventoryService (http://inventory-service:8081/api/inventory)
+[2024-03-15 08:23:40] ERROR - GraphQL resolver failed: getInventoryStatus
+[2024-03-15 08:23:40] ERROR - Retrying request to InventoryService (attempt 1 of 3)
+[2024-03-15 08:23:50] ERROR - Timeout after 10000ms waiting for response from InventoryService (attempt 1 failed)
+[2024-03-15 08:23:50] ERROR - Retrying request to InventoryService (attempt 2 of 3)
+[2024-03-15 08:24:00] ERROR - Timeout after 10000ms waiting for response from InventoryService (attempt 2 failed)
+[2024-03-15 08:24:00] ERROR - Retrying request to InventoryService (attempt 3 of 3)
+[2024-03-15 08:24:10] ERROR - Timeout after 10000ms waiting for response from InventoryService (attempt 3 failed)
+[2024-03-15 08:24:10] FATAL - All retry attempts exhausted for InventoryService. Failing request.
+[2024-03-15 08:24:10] ERROR - GraphQL resolver failed: getInventoryStatus after 3 retries
+[2024-03-15 08:24:15] WARN  - Circuit breaker triggered for InventoryService after 3 consecutive failures
+[2024-03-15 08:24:15] INFO  - Incoming GraphQL query from client 192.168.1.89
+[2024-03-15 08:24:15] INFO  - Resolving query: getUserProfile { userId: 7823 }
+[2024-03-15 08:24:15] DEBUG - Forwarding request to UserService at http://user-service:8082/api/users
+[2024-03-15 08:24:15] INFO  - UserService responded successfully in 120ms
+[2024-03-15 08:24:20] ERROR - Circuit breaker OPEN for InventoryService - rejecting all requests
+[2024-03-15 08:24:20] ERROR - GraphQL resolver failed: getInventoryStatus - Circuit breaker open
+[2024-03-15 08:24:25] ERROR - Timeout after 10000ms waiting for response from OrderService (http://order-service:8080/api/orders)
+[2024-03-15 08:24:25] WARN  - Circuit breaker triggered for OrderService after 2 consecutive failures
+[2024-03-15 08:24:30] FATAL - Multiple downstream services unavailable: OrderService, InventoryService
+[2024-03-15 08:24:30] ERROR - GraphQL API degraded mode activated - only UserService responding
+[2024-03-15 08:24:35] INFO  - Alerting on-call engineer via PagerDuty
+[2024-03-15 08:24:35] INFO  - Incident #INC-2024-0892 created
