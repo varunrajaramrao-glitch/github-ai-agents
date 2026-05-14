@@ -62,11 +62,14 @@ http://13.60.181.216:8000/docs
 
 ### Live API on AWS EC2
 ![API Documentation](link-to-screenshot)
-<img width="840" height="716" alt="image" src="https://github.com/user-attachments/assets/c31b5bc4-23cc-45e0-b558-dc8851535d3e" />
+<img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/28bac1cc-82e4-4dc8-b3e5-967a5ed8bd30" />
+
+
 
 ### Sample Response
 ![Sample Response](link-to-screenshot)
-<img width="840" height="716" alt="image" src="https://github.com/user-attachments/assets/98a59136-c939-4568-bb4c-6adbeb242943" />
+<img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/de02b394-a3fa-44b3-9363-547174390ab6" />
+
 
 ## Run Locally with Docker
 
