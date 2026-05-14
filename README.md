@@ -58,6 +58,15 @@ http://13.60.181.216:8000/docs
   "report": "Incident Resolution Guide with immediate, short-term and long-term fixes..."
 }
 ```
+## Screenshots
+
+### Live API on AWS EC2
+![API Documentation](link-to-screenshot)
+<img width="840" height="716" alt="image" src="https://github.com/user-attachments/assets/c31b5bc4-23cc-45e0-b558-dc8851535d3e" />
+
+### Sample Response
+![Sample Response](link-to-screenshot)
+<img width="840" height="716" alt="image" src="https://github.com/user-attachments/assets/98a59136-c939-4568-bb4c-6adbeb242943" />
 
 ## Run Locally with Docker
 
