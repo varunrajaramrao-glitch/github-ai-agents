@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from crewai import Crew, Process
 from agents import log_analyzer, issue_investigator, solution_specialist
 from tasks import create_tasks
+from fastapi import HTTPException
 
 app = FastAPI()
 
@@ -13,9 +14,15 @@ class LogInput(BaseModel):
 @app.post("/analyze")
 
 def analyze_log(input: LogInput):
+    if not input.log_content.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Log content cannot be empty. Please provide error log text."
+        )
 
     log_content = input.log_content
     tasks = create_tasks(log_content)
+    
 
     crew = Crew(
                  agents=[log_analyzer, issue_investigator, solution_specialist],
