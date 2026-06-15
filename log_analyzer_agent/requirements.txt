@@ -1,4 +1,4 @@
-﻿crewai==1.14.7
+﻿crewai==1.14.4
 crewai-tools==1.14.4
 python-dotenv==1.2.2
 fastapi==0.128.0
