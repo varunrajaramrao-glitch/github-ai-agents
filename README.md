@@ -1,4 +1,5 @@
 # AI Log Analyzer Agent
+[![Deploy Log Analyzer](https://github.com/varunrajaramrao-glitch/github-ai-agents/actions/workflows/deploy.yml/badge.svg)](https://github.com/varunrajaramrao-glitch/github-ai-agents/actions/workflows/deploy.yml)
 
 An AI-powered incident response system that automatically analyzes production error logs and generates precise, actionable resolution reports using a multi-agent architecture.
 
