@@ -6,12 +6,13 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path="../.env")
 
 llm = LLM(
-    model="groq/llama-3.3-70b-versatile",
-    api_key=os.getenv("GROQ_API_KEY"),
+    model=os.getenv("LLM_MODEL", "gemini/gemini-3.6-flash"),
+    api_key=os.getenv("GEMINI_API_KEY"),
 )
 
 search_tool = SerperDevTool(
-    api_key=os.getenv("SERPER_API_KEY")
+    api_key=os.getenv("SERPER_API_KEY"),
+    n_results=2,
 )
 
 log_analyzer = Agent(
@@ -40,7 +41,7 @@ solution_specialist = Agent(
     role="Solution Specialist",
     goal="Research and provide actionable solutions for the identified issues",
     llm=llm,
-    #tools=[search_tool],
+    tools=[search_tool],
     backstory=(
         "You are a solutions architect who specializes in fixing production incidents. "
         "You search the internet for the latest best practices and provide "
