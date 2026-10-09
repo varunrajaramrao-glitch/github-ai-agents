@@ -14,6 +14,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 
 class LogInput(BaseModel):
     log_content: str
