@@ -58,7 +58,9 @@ This service has been deployed in two environments.
 - **Ingress** (nginx) for host-based routing, with a raised proxy timeout for the long-running `/analyze` call
 - API keys injected via a **Kubernetes Secret**, never baked into the image
 
-> The Terraform infrastructure code is maintained separately and not included in this repository.
+> The Terraform IaC is included in this repo:
+- **`log-analyzer-infra/`** — AWS EC2 deployment (IAM, security groups, SSM Parameter Store, S3 + DynamoDB remote state)
+- **`log-analyzer-eks/`** — Amazon EKS cluster (VPC and managed node groups via community Terraform modules)
 
 ## Run Locally with Docker
 
