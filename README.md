@@ -1,4 +1,5 @@
 # AI Log Analyzer Agent
+[![CI](https://github.com/varunrajaramrao-glitch/github-ai-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/varunrajaramrao-glitch/github-ai-agents/actions/workflows/ci.yml)
 
 An AI-powered incident-response service that reads raw production error logs and returns a precise, actionable resolution report, using a multi-agent architecture. Containerized with Docker and deployed two ways — to AWS (Terraform + CI/CD) and to Kubernetes.
 
